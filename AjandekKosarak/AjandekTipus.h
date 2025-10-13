@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include <unordered_map>
+#include <map>
 
 enum class AjandekTipus
 {
@@ -14,4 +14,5 @@ enum class AjandekTipus
 	Tusfurdo
 };
 
-std::string string(AjandekTipus a);
+std::string ToString(const AjandekTipus a);
+AjandekTipus ToAjandekTipus(const std::string& s);

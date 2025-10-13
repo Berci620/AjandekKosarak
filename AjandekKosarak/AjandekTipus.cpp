@@ -1,8 +1,10 @@
-#pragma once
+﻿#pragma once
+
+#include <stdexcept>
 
 #include "AjandekTipus.h"
 
-std::unordered_map<AjandekTipus, std::string> AjandekTipusToString =
+std::map<AjandekTipus, std::string> AjandekTipusToString =
 {
 	{AjandekTipus::Kave, "Kave"},
 	{AjandekTipus::Bor, "Bor"},
@@ -13,12 +15,21 @@ std::unordered_map<AjandekTipus, std::string> AjandekTipusToString =
 	{AjandekTipus::Tusfurdo, "Tusfurdo"}
 };
 
-std::string string(AjandekTipus a)
+std::string ToString(AjandekTipus a)
 {
-	auto it = AjandekTipusToString.find(a);
-	if (it != AjandekTipusToString.end())
+	return AjandekTipusToString[a];
+}
+
+AjandekTipus ToAjandekTipus(const std::string& s)
+{
+	//	for (auto it = AjandekTipusToString.begin(); it != AjandekTipusToString.end(); ++it)
+	for(const auto& [first, second] : AjandekTipusToString) //	Ugyanaz mint az előző sor, csak rövidebben
 	{
-		return it->second;
+		if (second == s)
+		{
+			return first;
+		}
 	}
-	return "";
+
+	throw std::invalid_argument("Az ajandek nem talalhato.");
 }

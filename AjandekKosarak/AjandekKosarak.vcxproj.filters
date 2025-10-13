@@ -21,9 +21,27 @@
     <ClCompile Include="AjandekTipus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AjandekMennyisegPar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AjandekKosar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AjandekKosarKatalogus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AjandekTipus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AjandekMennyisegPar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AjandekKosar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AjandekKosarKatalogus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

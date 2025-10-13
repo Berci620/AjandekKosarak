@@ -4,6 +4,6 @@
 
 int main()
 {
-	AjandekTipus a = AjandekTipus::Pezsgo;
-	std::cout << string(a) << std::endl;
+	AjandekTipus a = ToAjandekTipus("Bor");
+	std::cout << ToString(a) << std::endl;
 }
