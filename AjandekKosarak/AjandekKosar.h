@@ -14,6 +14,9 @@ public:
 	std::vector<AjandekMennyisegPar> ajandekok;
 
 public:
+	friend std::ostream& operator<<(std::ostream& os, AjandekKosar ajandekKosar);
+
+public:
 	void UjAjandek(const std::string& tipus, const int mennyiseg);
 };
 

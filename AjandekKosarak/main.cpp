@@ -1,9 +1,11 @@
 #include <iostream>
+#include <fstream>
 
-#include "AjandekTipus.h"
+#include "AjandekKosarKatalogus.h"
 
 int main()
 {
-	AjandekTipus a = ToAjandekTipus("Bor");
-	std::cout << ToString(a) << std::endl;
+	AjandekKosarKatalogus katalogus;
+	katalogus.Beolvas("input.txt");
+	std::cout << katalogus;
 }

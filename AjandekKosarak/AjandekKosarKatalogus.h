@@ -9,6 +9,9 @@ public:
 	AjandekKosar Keres(const std::string& nev);
 	void Beolvas(const std::string& eleresi_ut);
 
+public:
+	friend std::ostream& operator<<(std::ostream& os, const AjandekKosarKatalogus& katalogus);
+
 private:
 	std::vector<AjandekKosar> kosarak;
 };

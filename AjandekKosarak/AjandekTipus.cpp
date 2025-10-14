@@ -33,3 +33,9 @@ AjandekTipus ToAjandekTipus(const std::string& s)
 
 	throw std::invalid_argument("Az ajandek nem talalhato.");
 }
+
+std::ostream& operator<<(std::ostream& os, AjandekTipus ajandek)
+{
+	os << ToString(ajandek);
+	return os;
+}

@@ -26,20 +26,55 @@ AjandekKosar AjandekKosarKatalogus::Keres(const std::string& nev)
 void AjandekKosarKatalogus::Beolvas(const std::string& eleresi_ut)
 {
 	AjandekKosar kosar;
+	int index = 0;
 	std::ifstream inputFile(eleresi_ut);
+
 	while (!inputFile.eof())
 	{
 		std::string s;
 		std::getline(inputFile, s);
-		if (s.find('(') != s.npos)
+
+		if (s.find('(') == s.npos)	//Amikor egy új kosár nevét kapjuk
 		{
+			if (index != 0)
+			{
+				UjAjandekKosar(kosar);
+			}
 			kosar = AjandekKosar{ s };
 		}
-		else 
+		else	//Amikor a kosár tartalmát kapjuk
 		{
-			kosar.UjAjandek()
+			std::string tipus = "";
+			int mennyiseg = 0;
+			auto it = s.cbegin();
+
+			while (*it != '(')	//Tipus string felépítése a sorból
+			{
+				tipus += *it;
+				++it;
+			}
+			++it;
+			while (*it != ')')	//Mennyiség felépítése a sorból
+			{
+				mennyiseg *= 10;
+				mennyiseg += static_cast<int>(*it)-48;
+				++it;
+			}
+
+			kosar.UjAjandek(tipus, mennyiseg);
 		}
+		++index;
 	}
+	UjAjandekKosar(kosar);
 
 	inputFile.close();
+}
+
+std::ostream& operator<<(std::ostream& os, const AjandekKosarKatalogus& katalogus)
+{
+	for (const auto it : katalogus.kosarak)
+	{
+		os << it;
+	}
+	return os;
 }

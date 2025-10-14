@@ -2,6 +2,7 @@
 
 #include <string>
 #include <map>
+#include <iostream>
 
 enum class AjandekTipus
 {
@@ -16,3 +17,5 @@ enum class AjandekTipus
 
 std::string ToString(const AjandekTipus a);
 AjandekTipus ToAjandekTipus(const std::string& s);
+
+std::ostream& operator<<(std::ostream& os, AjandekTipus ajandek);
