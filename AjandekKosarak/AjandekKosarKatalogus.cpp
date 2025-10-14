@@ -14,7 +14,7 @@ AjandekKosar AjandekKosarKatalogus::Keres(const std::string& nev)
 {
 	for (const auto& a : kosarak)
 	{
-		if (a.nev == nev)
+		if (a.Nev() == nev)
 		{
 			return a;
 		}

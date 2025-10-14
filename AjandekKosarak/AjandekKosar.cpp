@@ -2,16 +2,14 @@
 
 #include "AjandekKosar.h"
 
+//--------------------------------------------------------------------------
+//Constructors
 AjandekKosar::AjandekKosar(const std::string& nev)
 	:nev(nev)
 { }
 
-void AjandekKosar::UjAjandek(const std::string& tipus, const int mennyiseg)
-{
-	AjandekMennyisegPar value = AjandekMennyisegPar{ ToAjandekTipus(tipus), mennyiseg };
-	ajandekok.push_back(value);
-}
-
+//--------------------------------------------------------------------------
+//Operators
 std::ostream& operator<<(std::ostream& os, AjandekKosar ajandekKosar)
 {
 	os << ajandekKosar.nev << std::endl;
@@ -20,4 +18,23 @@ std::ostream& operator<<(std::ostream& os, AjandekKosar ajandekKosar)
 		os << it;
 	}
 	return os;
+}
+
+//--------------------------------------------------------------------------
+//Getters
+const std::string& AjandekKosar::Nev() const
+{
+	return nev;
+}
+const std::vector<AjandekMennyisegPar>& AjandekKosar::Ajandekok() const
+{
+	return ajandekok;
+}
+
+//--------------------------------------------------------------------------
+//Others
+void AjandekKosar::UjAjandek(const std::string& tipus, const int mennyiseg)
+{
+	AjandekMennyisegPar value = AjandekMennyisegPar{ ToAjandekTipus(tipus), mennyiseg };
+	ajandekok.push_back(value);
 }
