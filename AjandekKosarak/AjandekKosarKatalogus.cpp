@@ -75,11 +75,11 @@ void AjandekKosarKatalogus::Beolvas(const std::string& eleresi_ut)
 std::vector<AjandekKosar> AjandekKosarKatalogus::melyikTartalmaz(const std::string& ajandekTipus) const
 {
 	std::vector<AjandekKosar> result;
-	for (const auto& kosarIt : kosarak)
+	for (const auto& kosarIt : kosarak)	//Iterating kosarak
 	{
-		for (const auto& ajandekMennyisegIt : kosarIt.Ajandekok())
+		for (const auto& ajandekMennyisegIt : kosarIt.Ajandekok())	//Iterating ajandekMennyisegPar in a kosar
 		{
-			if (ajandekMennyisegIt.Tipus() == ToAjandekTipus(ajandekTipus))
+			if (ajandekMennyisegIt.Tipus() == ToAjandekTipus(ajandekTipus))	//Checking if tipus matches the given tipus
 			{
 				result.push_back(kosarIt);
 				break;
