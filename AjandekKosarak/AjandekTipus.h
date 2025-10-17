@@ -15,7 +15,7 @@ enum class AjandekTipus
 	Tusfurdo
 };
 
-std::string ToString(const AjandekTipus a);
-AjandekTipus ToAjandekTipus(const std::string& s);
+std::string ToString(const AjandekTipus a);	//Parser
+AjandekTipus ToAjandekTipus(const std::string& s);	//String to AjandekTipus
 
 std::ostream& operator<<(std::ostream& os, AjandekTipus ajandek);

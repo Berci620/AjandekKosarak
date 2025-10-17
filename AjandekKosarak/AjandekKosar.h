@@ -15,7 +15,7 @@ public:	//Constructors
 	AjandekKosar(const std::string& nev);
 
 public:	//Operators
-	friend std::ostream& operator<<(std::ostream& os, AjandekKosar ajandekKosar);
+	friend std::ostream& operator<<(std::ostream& os, const AjandekKosar& ajandekKosar);
 
 public:	//Getters
 	const std::string& Nev() const;

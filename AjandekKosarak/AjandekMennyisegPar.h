@@ -4,13 +4,17 @@
 
 class AjandekMennyisegPar
 {
-public:
+public:	//Constructors
 	AjandekMennyisegPar(const AjandekTipus& tipus, const int mennyiseg);
 
-public:
-	friend std::ostream& operator<<(std::ostream& os, AjandekMennyisegPar ajandekMennyiseg);
+public:	//Operators
+	friend std::ostream& operator<<(std::ostream& os, const AjandekMennyisegPar& ajandekMennyiseg);
 
-private:
+public:	//Getters
+	AjandekTipus Tipus() const;
+	int Mennyiseg() const;
+
+private:	//Variables
 	AjandekTipus tipus;
 	int mennyiseg;
 };

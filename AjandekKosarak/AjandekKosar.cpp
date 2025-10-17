@@ -10,7 +10,7 @@ AjandekKosar::AjandekKosar(const std::string& nev)
 
 //--------------------------------------------------------------------------
 //Operators
-std::ostream& operator<<(std::ostream& os, AjandekKosar ajandekKosar)
+std::ostream& operator<<(std::ostream& os, const AjandekKosar& ajandekKosar)
 {
 	os << ajandekKosar.nev << std::endl;
 	for (const auto it : ajandekKosar.ajandekok)

@@ -4,15 +4,16 @@
 
 class AjandekKosarKatalogus
 {
-public:
-	void UjAjandekKosar(const AjandekKosar& kosar);
-	AjandekKosar Keres(const std::string& nev);
-	void Beolvas(const std::string& eleresi_ut);
+public:	//Others
+	void UjAjandekKosar(const AjandekKosar& kosar);	//Add
+	AjandekKosar Keres(const std::string& nev);		//Find
+	void Beolvas(const std::string& eleresi_ut);	//Fill from file
+	std::vector<AjandekKosar> melyikTartalmaz(const std::string& ajandekTipus) const;	//Find, that contains
 
-public:
+public:	//Operators
 	friend std::ostream& operator<<(std::ostream& os, const AjandekKosarKatalogus& katalogus);
 
-private:
+private:	//Variables
 	std::vector<AjandekKosar> kosarak;
 };
 

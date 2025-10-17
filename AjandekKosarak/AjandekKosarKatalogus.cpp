@@ -5,6 +5,8 @@
 #include "AjandekKosarKatalogus.h"
 
 
+//--------------------------------------------------------------------------------------------------------------
+//Others
 void AjandekKosarKatalogus::UjAjandekKosar(const AjandekKosar& kosar)
 {
 	kosarak.push_back(kosar);
@@ -70,6 +72,26 @@ void AjandekKosarKatalogus::Beolvas(const std::string& eleresi_ut)
 	inputFile.close();
 }
 
+std::vector<AjandekKosar> AjandekKosarKatalogus::melyikTartalmaz(const std::string& ajandekTipus) const
+{
+	std::vector<AjandekKosar> result;
+	for (const auto& kosarIt : kosarak)
+	{
+		for (const auto& ajandekMennyisegIt : kosarIt.Ajandekok())
+		{
+			if (ajandekMennyisegIt.Tipus() == ToAjandekTipus(ajandekTipus))
+			{
+				result.push_back(kosarIt);
+				break;
+			}
+		}
+	}
+	return result;
+}
+
+
+//--------------------------------------------------------------------------------------------------------------
+//Operators
 std::ostream& operator<<(std::ostream& os, const AjandekKosarKatalogus& katalogus)
 {
 	for (const auto it : katalogus.kosarak)
